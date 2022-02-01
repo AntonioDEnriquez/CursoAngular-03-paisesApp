@@ -1,0 +1,55 @@
+<div class="animate__animated animate__fadeInDown animate__faster">
+    <div class="alert alert-info" *ngIf="!pais; else divPais">
+        Espere porfavor...
+    </div>
+
+    <ng-template #divPais>
+        <div class="row">
+            <div class="col-12">
+                <h1>Pais: <small>{{pais[0].name.common}}</small></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <h3>Bandera</h3>
+                <img class="img-thumbnail" [src]="pais[0].flags.png">
+            </div>
+
+            <div class="col">
+                <h3>Información</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Población</strong> {{pais[0].population | number}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Código númerico</strong> {{pais[0].ccn3 }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Código Alpha4</strong> {{pais[0].cca3 }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Traducciones</h3>
+        <div class="row">
+            <div class="col">
+                <span class="badge bg-primary ms-2">{{pais[0].translations.spa.official}}</span>
+                <span class="badge bg-primary ms-2">{{pais[0].translations.jpn.official}}</span>
+                <span class="badge bg-primary ms-2">{{pais[0].translations.por.official}}</span>
+                <span class="badge bg-primary ms-2">{{pais[0].translations.swe.official}}</span>
+                <span class="badge bg-primary ms-2">{{pais[0].translations.urd.official}}</span>
+                <span class="badge bg-primary ms-2">{{pais[0].translations.ces.official}}</span>
+            </div>
+        </div>
+
+
+        <!-- codigo -->
+        <!-- <pre class="mt-5">
+        {{pais[0] | json}}
+    </pre> -->
+
+    </ng-template>
+
+</div>

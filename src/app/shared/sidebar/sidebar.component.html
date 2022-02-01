@@ -1,0 +1,13 @@
+<div class="animate__animated animate__bounceInLeft animate__faster ">
+    <h2>Busquedas</h2>
+    <hr>
+    <ul class="list-group">
+        <!-- routerLink para navegar en las rutas, routerLinckActive para agregarle una clase si me encuentro en esa ruta,
+            [routerLinkActiveOptions]="{exact: true}" para que sea esactamente como esta ahi, por que si no se queda marcado el buscar pais -->
+        <li class="list-group-item" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            Buscar
+            País</li>
+        <li class="list-group-item" routerLink="region" routerLinkActive="active">Por Región</li>
+        <li class="list-group-item" routerLink="capital" routerLinkActive="active">Por Capital</li>
+    </ul>
+</div>

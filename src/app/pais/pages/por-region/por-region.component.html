@@ -1,0 +1,32 @@
+<div class="animate__animated animate__fadeInDown animate__faster">
+    <!-- pipe titlecase para convertir A la primera mayuscula -->
+    <h3>Buscar por región <small>{{regionActiva | titlecase}}</small></h3>
+    <hr>
+
+    <h5>Seleccione la región</h5>
+
+    <div class="row">
+        <div class="col">
+            <!-- [class.btn-primary]="region === regionActiva" -->
+            <!-- 
+                [ngClass]="{
+                'btn-primary': regionActiva === region,
+                'btn-outline-primary': regionActiva !== region
+            }"
+             -->
+            <!-- [class]="(region === regionActiva) ? 'btn btn-primary': 'btn btn-outline-primary' " estoe s una condicion ternaria, si la region es exactamente igual a la region activa si es el
+            caso voy a colocar 'btn btn-primary' si no coloco  'btn btn-outline-primary'-->
+            <!-- [class]="getClaseCSS(region)" hace lo mismo que arriba solo que el metodo esta creado en el ts y desde aqui se manda a llamar y le manda la region -->
+            <button [class]="getClaseCSS(region)" *ngFor="let region of regiones"
+                (click)="activarRegion(region)">{{region |
+                titlecase}}</button>
+        </div>
+    </div>
+
+    <div class="row mt-5" *ngIf="paises.length > 0">
+        <div class="col-11">
+            <app-pais-tabla [paises]="paises"></app-pais-tabla>
+        </div>
+    </div>
+
+</div>
